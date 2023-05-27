@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HotkeysTarget2 = exports.HotkeysDialog2 = exports.setHotkeysDialogProps = exports.hideHotkeysDialog = exports.parseKeyCombo = exports.getKeyComboString = exports.getKeyCombo = exports.comboMatches = exports.HotkeysTarget = exports.KeyComboTag = exports.KeyCombo = exports.Hotkey = void 0;
+const tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./hotkeysTypes"), exports);
+tslib_1.__exportStar(require("./hotkeys"), exports);
+var hotkey_1 = require("./hotkey");
+Object.defineProperty(exports, "Hotkey", { enumerable: true, get: function () { return hotkey_1.Hotkey; } });
+var keyComboTag_1 = require("./keyComboTag");
+Object.defineProperty(exports, "KeyCombo", { enumerable: true, get: function () { return keyComboTag_1.KeyCombo; } });
+Object.defineProperty(exports, "KeyComboTag", { enumerable: true, get: function () { return keyComboTag_1.KeyComboTag; } });
+var hotkeysTarget_1 = require("./hotkeysTarget");
+Object.defineProperty(exports, "HotkeysTarget", { enumerable: true, get: function () { return hotkeysTarget_1.HotkeysTarget; } });
+var hotkeyParser_1 = require("./hotkeyParser");
+Object.defineProperty(exports, "comboMatches", { enumerable: true, get: function () { return hotkeyParser_1.comboMatches; } });
+Object.defineProperty(exports, "getKeyCombo", { enumerable: true, get: function () { return hotkeyParser_1.getKeyCombo; } });
+Object.defineProperty(exports, "getKeyComboString", { enumerable: true, get: function () { return hotkeyParser_1.getKeyComboString; } });
+Object.defineProperty(exports, "parseKeyCombo", { enumerable: true, get: function () { return hotkeyParser_1.parseKeyCombo; } });
+var hotkeysDialog_1 = require("./hotkeysDialog");
+Object.defineProperty(exports, "hideHotkeysDialog", { enumerable: true, get: function () { return hotkeysDialog_1.hideHotkeysDialog; } });
+Object.defineProperty(exports, "setHotkeysDialogProps", { enumerable: true, get: function () { return hotkeysDialog_1.setHotkeysDialogProps; } });
+var hotkeysDialog2_1 = require("./hotkeysDialog2");
+Object.defineProperty(exports, "HotkeysDialog2", { enumerable: true, get: function () { return hotkeysDialog2_1.HotkeysDialog2; } });
+var hotkeysTarget2_1 = require("./hotkeysTarget2");
+Object.defineProperty(exports, "HotkeysTarget2", { enumerable: true, get: function () { return hotkeysTarget2_1.HotkeysTarget2; } });
+//# sourceMappingURL=index.js.map

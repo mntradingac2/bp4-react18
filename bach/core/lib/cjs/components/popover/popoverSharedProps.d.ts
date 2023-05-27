@@ -1,0 +1,46 @@
+import { Placement, Boundary as PopperBoundary, Modifiers as PopperModifiers } from "popper.js";
+import * as React from "react";
+import { Props } from "../../common/props";
+import { OverlayableProps } from "../overlay/overlay";
+export { PopperBoundary, PopperModifiers };
+export declare const PopoverPosition: {
+    AUTO: "auto";
+    AUTO_END: "auto-end";
+    AUTO_START: "auto-start";
+    BOTTOM: "bottom";
+    BOTTOM_LEFT: "bottom-left";
+    BOTTOM_RIGHT: "bottom-right";
+    LEFT: "left";
+    LEFT_BOTTOM: "left-bottom";
+    LEFT_TOP: "left-top";
+    RIGHT: "right";
+    RIGHT_BOTTOM: "right-bottom";
+    RIGHT_TOP: "right-top";
+    TOP: "top";
+    TOP_LEFT: "top-left";
+    TOP_RIGHT: "top-right";
+};
+export declare type PopoverPosition = (typeof PopoverPosition)[keyof typeof PopoverPosition];
+export interface IPopoverSharedProps extends OverlayableProps, Props {
+    children?: React.ReactNode;
+    boundary?: PopperBoundary;
+    captureDismiss?: boolean;
+    defaultIsOpen?: boolean;
+    disabled?: boolean;
+    hoverCloseDelay?: number;
+    hoverOpenDelay?: number;
+    inheritDarkTheme?: boolean;
+    isOpen?: boolean;
+    minimal?: boolean;
+    modifiers?: PopperModifiers;
+    onInteraction?: (nextOpenState: boolean, e?: React.SyntheticEvent<HTMLElement>) => void;
+    openOnTargetFocus?: boolean;
+    placement?: Placement;
+    popoverClassName?: string;
+    position?: PopoverPosition;
+    targetClassName?: string;
+    targetProps?: React.HTMLAttributes<HTMLElement>;
+    targetTagName?: keyof JSX.IntrinsicElements;
+    usePortal?: boolean;
+    wrapperTagName?: keyof JSX.IntrinsicElements;
+}

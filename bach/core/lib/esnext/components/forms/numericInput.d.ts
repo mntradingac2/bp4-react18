@@ -1,0 +1,81 @@
+import * as React from "react";
+import { AbstractPureComponent2, HTMLInputProps, Position } from "../../common";
+import type { InputSharedProps } from "./inputSharedProps";
+export declare type NumericInputProps = INumericInputProps;
+export interface INumericInputProps extends InputSharedProps {
+    allowNumericCharactersOnly?: boolean;
+    asyncControl?: boolean;
+    buttonPosition?: typeof Position.LEFT | typeof Position.RIGHT | "none";
+    clampValueOnBlur?: boolean;
+    defaultValue?: number | string;
+    large?: boolean;
+    locale?: string;
+    majorStepSize?: number | null;
+    max?: number;
+    min?: number;
+    minorStepSize?: number | null;
+    selectAllOnFocus?: boolean;
+    selectAllOnIncrement?: boolean;
+    small?: boolean;
+    stepSize?: number;
+    value?: number | string;
+    onButtonClick?(valueAsNumber: number, valueAsString: string): void;
+    onValueChange?(valueAsNumber: number, valueAsString: string, inputElement: HTMLInputElement | null): void;
+}
+export interface INumericInputState {
+    currentImeInputInvalid: boolean;
+    prevMinProp?: number;
+    prevMaxProp?: number;
+    shouldSelectAfterUpdate: boolean;
+    stepMaxPrecision: number;
+    value: string;
+}
+export declare class NumericInput extends AbstractPureComponent2<HTMLInputProps & NumericInputProps, INumericInputState> {
+    static displayName: string;
+    static VALUE_EMPTY: string;
+    static VALUE_ZERO: string;
+    private numericInputId;
+    static defaultProps: NumericInputProps;
+    static getDerivedStateFromProps(props: NumericInputProps, state: INumericInputState): {
+        stepMaxPrecision: number;
+        value: string;
+        prevMaxProp: number | undefined;
+        prevMinProp: number | undefined;
+    };
+    private static CONTINUOUS_CHANGE_DELAY;
+    private static CONTINUOUS_CHANGE_INTERVAL;
+    private static getStepMaxPrecision;
+    private static roundAndClampValue;
+    state: INumericInputState;
+    private didPasteEventJustOccur;
+    private delta;
+    inputElement: HTMLInputElement | null;
+    private inputRef;
+    private intervalId?;
+    private incrementButtonHandlers;
+    private decrementButtonHandlers;
+    private getCurrentValueAsNumber;
+    render(): React.JSX.Element;
+    componentDidUpdate(prevProps: NumericInputProps, prevState: INumericInputState): void;
+    protected validateProps(nextProps: HTMLInputProps & NumericInputProps): void;
+    private renderButtons;
+    private renderInput;
+    private getButtonEventHandlers;
+    private handleButtonClick;
+    private startContinuousChange;
+    private stopContinuousChange;
+    private handleContinuousChange;
+    private handleInputFocus;
+    private handleInputBlur;
+    private handleInputKeyDown;
+    private handleCompositionEnd;
+    private handleCompositionUpdate;
+    private handleInputKeyPress;
+    private handleInputPaste;
+    private handleInputChange;
+    private handleNextValue;
+    private incrementValue;
+    private getIncrementDelta;
+    private roundAndClampValue;
+    private updateDelta;
+}
